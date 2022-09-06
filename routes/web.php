@@ -13,9 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+
+//  to get all route
+
+//php artisan route:list   
+
+
+
+
+ // controller index function
+Route::get('/', 'App\Http\Controllers\maincontroller@index');
 
 //(URI,Viow,array of data)
 
