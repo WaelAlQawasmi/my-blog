@@ -12,3 +12,7 @@
 >php artisan migrate 
 - to update table 
 > php artisan make:migration add_auther_to_articels_table --table=tableName
+-  to create modle , migration ,controller and resoses
+
+>php artisan make : model Product -mcr
+
