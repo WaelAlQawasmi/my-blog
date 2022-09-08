@@ -14,10 +14,10 @@ class PosteController extends Controller
      */
     public function index()
     {   
-       // $data=poste::all();
-      //  $data=poste::latest();
+     $data=poste::all();
+        $data=poste::latest()->paginate(4);
 
-        return view('home')->with('my_name','wael');
+        return view('home',['my_name'=>'wael','data'=>$data]);
     }
 
     /**
@@ -38,7 +38,15 @@ class PosteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $request->validate([
+        'body'=>'required',
+       
+
+       ]);
+
+       $post = poste::create($request->all());
+       return redirect()->route('myPostes.index')
+       ->with('success','product added successflly') ;
     }
 
     /**
