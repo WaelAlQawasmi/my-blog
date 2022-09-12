@@ -19,6 +19,10 @@
 
 
 >php artisan make : model ModleName -mcr
+- to install ui
+> composer require laravel/ui
+- to install authentication
+> php artisan ui bootstrap --auth
 
 ## how to buid project
 1. install composer from offical website
