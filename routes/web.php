@@ -62,3 +62,7 @@ Route::get('/pathvar/{name}', function ($name) {
 Route::view('/me','about',['my_name'=> 'wael from me']);
 
 Route::resource('/myPostes','App\Http\Controllers\PosteController');
+
+Route::resource('/myProjects','App\Http\Controllers\ProjectsController');
+
+
