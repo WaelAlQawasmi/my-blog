@@ -53,10 +53,10 @@ Route::get('/pathvar/{name}', function ($name) {
 
 
 
-    Route::get('/home/{name}', function ($name) {
+/* Route::get('/home/{name}', function ($name) {
     
         return view('home',['my_name'=> $name]);
-    });
+    });*/
 
 
 Route::view('/me','about',['my_name'=> 'wael from me']);
@@ -66,3 +66,11 @@ Route::resource('/myPostes','App\Http\Controllers\PosteController');
 Route::resource('/myProjects','App\Http\Controllers\ProjectsController');
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
