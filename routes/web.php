@@ -67,18 +67,14 @@ Route::resource('/myPostes','App\Http\Controllers\PosteController');
 
 Route::resource('/myProjects','App\Http\Controllers\ProjectsController');
 
-Route::get('/admin',[LoginController::class,'showAdminLoginForm'])->name('admin.login-view');
+
+Auth::routes();
+
+Route::get('/admin',[LoginController::class,'showAdminLoginForm'])->name('admin.login-view'); 
 Route::post('/admin',[LoginController::class,'adminLogin'])->name('admin.login');
 
+Route::get('/admin/register',[RegisterController::class,'showAdminRegisterForm'])->name('admin.register-view');
+Route::post('/admin/register',[RegisterController::class,'createAdmin'])->name('admin.register');
 
-Route::group(['middleware' => ['auth:admin']], function() {
-    Route::get('/users', [UserController::class, 'users']);
-  });
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

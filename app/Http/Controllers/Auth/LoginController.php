@@ -42,10 +42,9 @@ class LoginController extends Controller
     }
 
 
-    
     public function showAdminLoginForm()
     {
-        return view('auth.login', ['url' => route('admin.login-view'), 'title'=>'Admin']);
+        return view('auth.login', ['url' => route('admin.login-view'), "route"=> route('admin.login'),'title'=>'Admin']);
     }
 
     public function adminLogin(Request $request)
@@ -56,12 +55,11 @@ class LoginController extends Controller
         ]);
 
         if (Auth::guard('admin')->attempt($request->only(['email','password']), $request->get('remember'))){
-            return redirect()->intended('/admin/dashboard');
+            return redirect()->intended('/myProjects');
         }
 
         return back()->withInput($request->only('email', 'remember'));
     }
-
     
 
     
