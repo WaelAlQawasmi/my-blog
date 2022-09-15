@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
     <!--  All snippets are MIT license http://bootdey.com/license -->
@@ -14,6 +15,15 @@
 <body>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 <div class="container">
+
+    @extends('layout.navbar')
+ @section('title',"user")
+    
+ @section('content')
+
+     
+ @endsection
+
     @if (session('success'))
     <div class="alert alert-primary" role="alert">
   {{session('success')}}
