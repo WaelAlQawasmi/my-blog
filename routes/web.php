@@ -1,6 +1,8 @@
 <?php
+namespace App\Http\Controllers\Auth;
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,7 +67,13 @@ Route::resource('/myPostes','App\Http\Controllers\PosteController');
 
 Route::resource('/myProjects','App\Http\Controllers\ProjectsController');
 
+Route::get('/admin',[LoginController::class,'showAdminLoginForm'])->name('admin.login-view');
+Route::post('/admin',[LoginController::class,'adminLogin'])->name('admin.login');
 
+
+Route::group(['middleware' => ['auth:admin']], function() {
+    Route::get('/users', [UserController::class, 'users']);
+  });
 
 Auth::routes();
 
