@@ -20,6 +20,13 @@
       </div>
         
     @endif
+    <form method="POST" action="{{route('logout')}}">
+        @csrf
+        <button type="submit"> logout</button>
+    </form>
+    @auth
+       {{Auth::user()->name}} 
+    @endauth
     <div class="row clearfix">
   
 
