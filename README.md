@@ -42,3 +42,5 @@
 5. handle viow to transfare data 
 5. bulid contrller methode
 5. start laravle server
+
+[crud  coontroller resorsrs](http://estebanpayret.com/laravel-crud-create-read-update-and-delete/)
